@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voting Management System - Registration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="registration">
+  <header class="site-header">
+    <div class="brand">VoteSphere</div>
+    <nav class="nav-links">
+      <a href="Home page.html" data-page="home">Home</a>
+      <a href="About site.html" data-page="about">About</a>
+      <a href="Registration.html" data-page="registration">Register</a>
+      <a href="Login in.html" data-page="login">Login</a>
+      <a href="Voting.html" data-page="voting">Voting</a>
+    </nav>
+    <div class="nav-links">
+      <span id="authState" class="muted">Not logged in</span>
+      <button id="logoutBtn" class="btn hide" type="button">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="card" style="max-width: 760px; margin: 0 auto;">
+      <h1>Voter Registration</h1>
+      <p class="muted">Create your voter account to participate in elections.</p>
+
+      <form id="registerForm" class="form">
+        <div class="row">
+          <label>
+            Full Name
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+        </div>
+
+        <div class="row">
+          <label>
+            Phone Number
+            <input type="tel" name="phone" required>
+          </label>
+          <label>
+            Date of Birth
+            <input type="date" name="dob" required>
+          </label>
+        </div>
+
+        <div class="row">
+          <label>
+            Gender
+            <select name="gender" required>
+              <option value="">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Prefer not to say</option>
+            </select>
+          </label>
+          <label>
+            Address
+            <input type="text" name="address" required>
+          </label>
+        </div>
+
+        <div class="row">
+          <label>
+            Password
+            <input type="password" name="password" minlength="6" required>
+          </label>
+          <label>
+            Confirm Password
+            <input type="password" name="confirmPassword" minlength="6" required>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Account</button>
+      </form>
+
+      <div id="registerMessage" class="message"></div>
+      <p class="muted" style="margin-top: 12px;">Already registered? <a class="inline-link" href="Login in.html">Login now</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">Voting Management System</footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Management System - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="voting">
+    <header class="site-header">
+        <div class="brand">VoteSphere</div>
+        <nav class="nav-links">
+            <a href="Home page.html" data-page="home">Home</a>
+            <a href="About site.html" data-page="about">About</a>
+            <a href="Registration.html" data-page="registration">Register</a>
+            <a href="Login in.html" data-page="login">Login</a>
+            <a href="Voting.html" data-page="voting">Voting</a>
+        </nav>
+        <div class="nav-links">
+            <span id="authState" class="muted">Not logged in</span>
+            <button id="logoutBtn" class="btn hide" type="button">Logout</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="authGate" class="card hide">
+            <h1>Login Required</h1>
+            <p class="muted">You must login to access the voting dashboard.</p>
+            <a href="Login in.html" class="btn btn-primary">Go to Login</a>
+        </section>
+
+        <div id="votingApp" class="grid hide" style="gap: 18px;">
+            <section id="adminPanel" class="card hide">
+                <div class="section-title">
+                    <h2>Admin Panel</h2>
+                    <p class="muted">Create elections and manage voting status.</p>
+                </div>
+                <form id="createElectionForm" class="form">
+                    <div class="row">
+                        <label>
+                            Election Title
+                            <input type="text" name="title" required>
+                        </label>
+                        <label>
+                            Initial Status
+                            <select name="status" required>
+                                <option value="open">Open</option>
+                                <option value="closed">Closed</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label>
+                        Description
+                        <textarea name="description" placeholder="Explain what this election is for."></textarea>
+                    </label>
+
+                    <div class="row">
+                        <label>
+                            Start Date & Time
+                            <input type="datetime-local" name="startAt">
+                        </label>
+                        <label>
+                            End Date & Time
+                            <input type="datetime-local" name="endAt">
+                        </label>
+                    </div>
+
+                    <label>
+                        Candidates (one per line: Name|Party)
+                        <textarea name="candidates" placeholder="Riya Kapoor|Green Alliance&#10;Arjun Das|People's Voice" required></textarea>
+                    </label>
+
+                    <button type="submit" class="btn btn-primary">Create Election</button>
+                </form>
+                <div id="adminMessage" class="message"></div>
+
+                <h3 style="margin-top: 18px;">Manage Elections</h3>
+                <div id="adminElections" class="list"></div>
+            </section>
+
+            <section id="voterPanel" class="card hide">
+                <h2>Cast Your Vote</h2>
+                <p class="muted">You can vote once per election. Your vote is stored securely in local browser data.</p>
+                <div id="voterElections" class="list"></div>
+            </section>
+
+            <section class="card">
+                <h2>Election Results</h2>
+                <p class="muted">Results update immediately after each vote.</p>
+                <div id="resultsList" class="list"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">Voting Management System</footer>
+    <script src="app.js"></script>
+</body>
+</html>

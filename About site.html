@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Management System - About</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="about">
+    <header class="site-header">
+        <div class="brand">VoteSphere</div>
+        <nav class="nav-links">
+            <a href="Home page.html" data-page="home">Home</a>
+            <a href="About site.html" data-page="about">About</a>
+            <a href="Registration.html" data-page="registration">Register</a>
+            <a href="Login in.html" data-page="login">Login</a>
+            <a href="Voting.html" data-page="voting">Voting</a>
+        </nav>
+        <div class="nav-links">
+            <span id="authState" class="muted">Not logged in</span>
+            <button id="logoutBtn" class="btn hide" type="button">Logout</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="card">
+            <h1>About This Project</h1>
+            <p>
+                VoteSphere is a complete browser-based voting management system built with HTML, CSS, and JavaScript.
+                It is designed for academic demos and prototype workflows where a lightweight setup is preferred.
+            </p>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                <article class="item">
+                    <h3>Voter Features</h3>
+                    <p class="muted">Registration, login, open election discovery, one-click vote submission, and vote lock per election.</p>
+                </article>
+                <article class="item">
+                    <h3>Admin Features</h3>
+                    <p class="muted">Create elections, set open or closed status, define candidates, and remove elections when needed.</p>
+                </article>
+                <article class="item">
+                    <h3>Transparency</h3>
+                    <p class="muted">Live result calculation with winner summaries and candidate-wise vote counts.</p>
+                </article>
+            </div>
+            <p class="muted" style="margin-top: 12px;">
+                Data is stored in your browser localStorage for demo purposes. This project can be extended to a backend service for production.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">&copy; <span id="yearStamp"></span> Voting Management System</footer>
+    <script src="app.js"></script>
+</body>
+</html>
