@@ -43,7 +43,7 @@ You can also register new voter accounts from the registration page.
 - vms_votes
 - vms_session
 
-## Note
+## Notes
 
 - This project is frontend-only and intended for learning/demo use.
 - For production use, add backend authentication, encrypted storage, server-side vote validation, and audit logging.
